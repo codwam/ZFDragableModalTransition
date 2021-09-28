@@ -301,6 +301,8 @@
 
 - (void)updateInteractiveTransition:(CGFloat)percentComplete
 {
+    [super updateInteractiveTransition:percentComplete];
+    
     if (!self.bounces && percentComplete < 0) {
         percentComplete = 0;
     }
@@ -350,6 +352,8 @@
 
 - (void)finishInteractiveTransition
 {
+    [super finishInteractiveTransition];
+    
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
 
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -401,6 +405,8 @@
 
 - (void)cancelInteractiveTransition
 {
+    [super cancelInteractiveTransition];
+
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     [transitionContext cancelInteractiveTransition];
     

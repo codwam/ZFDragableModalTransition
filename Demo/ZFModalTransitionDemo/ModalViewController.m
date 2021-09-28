@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    NSLog(@"<%p> %s", self, __PRETTY_FUNCTION__);
+    
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,6 +39,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"<%p> %s", self, __PRETTY_FUNCTION__);
 }
 
 - (IBAction)closeButtonPressed:(id)sender
